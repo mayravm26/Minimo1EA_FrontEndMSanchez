@@ -1,0 +1,10 @@
+<h2>Historial de Sesiones</h2>
+<button (click)="startSession()">Iniciar Sesión</button>
+<ul>
+  <li *ngFor="let session of sessions">
+    <p>Actividad: {{ session.activityDescription }}</p>
+    <p>Inicio: {{ session.startTime | date:'short' }}</p>
+    <p *ngIf="session.endTime">Fin: {{ session.endTime | date:'short' }}</p>
+    <button *ngIf="session.isActive" (click)="endSession(session._id)">Finalizar</button>
+  </li>
+</ul>

@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 import { UserComponent } from './components/user/user.component';
 import { PostComponent } from './components/post/post.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-
+import { SessionListComponent } from './components/session-list/session-list.component';
 
 export const routes: Routes = [
     { path: '', redirectTo: 'login', pathMatch: 'full' }, // Redirigeix a Login per defecte
@@ -14,8 +14,9 @@ export const routes: Routes = [
     { path: 'user', component: UserComponent},
     { path: 'post', component: PostComponent},
     { path: 'navbar', component: NavbarComponent},
-    { path: '**', redirectTo: 'login' } 
-];
+    { path: '**', redirectTo: 'login' },
+      // Nueva ruta para gestionar sesiones
+  { path: 'sessions', component: SessionListComponent },
 
 @NgModule({
     imports: [RouterModule.forRoot(routes, { useHash: true })], // Mode hash para evitar problemes amb l'enrutat
